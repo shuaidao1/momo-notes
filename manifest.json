@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Momo Notes｜桃桃便利贴",
+  "version": "0.1.0",
+  "description": "在任意网页上创建、编辑、拖动并保存可爱的便利贴，随手记录灵感。数据仅保存在本地浏览器。",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Momo Notes｜桃桃便利贴",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.css"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}

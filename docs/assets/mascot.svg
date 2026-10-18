@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="peach" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FBCFE8"/>
+      <stop offset="55%" stop-color="#F472B6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </radialGradient>
+  </defs>
+  <!-- leaf -->
+  <path d="M34 13c6-7 15-7 17-5-1 7-8 11-15 9z" fill="#8FD6A8" stroke="#6FBF8A" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M33 13c1-5 6-9 10-10" fill="none" stroke="#6FBF8A" stroke-width="1" stroke-linecap="round"/>
+  <!-- body -->
+  <path d="M32 18 C 16 18, 10 30, 10 40 C 10 52, 20 58, 32 58 C 44 58, 54 52, 54 40 C 54 30, 48 18, 32 18 Z" fill="url(#peach)"/>
+  <!-- cleft -->
+  <path d="M32 18c-3 4-3 6 0 9c3-3 3-5 0-9z" fill="#E0528E"/>
+  <!-- highlight -->
+  <ellipse cx="22" cy="34" rx="5" ry="7" fill="#FFE4EF" opacity="0.55"/>
+  <!-- eyes -->
+  <circle cx="26" cy="42" r="2.3" fill="#5B2B3A"/>
+  <circle cx="38" cy="42" r="2.3" fill="#5B2B3A"/>
+  <circle cx="26.8" cy="41.2" r="0.8" fill="#ffffff"/>
+  <circle cx="38.8" cy="41.2" r="0.8" fill="#ffffff"/>
+  <!-- blush -->
+  <ellipse cx="21" cy="48" rx="3.2" ry="2.2" fill="#F472B6" opacity="0.7"/>
+  <ellipse cx="43" cy="48" rx="3.2" ry="2.2" fill="#F472B6" opacity="0.7"/>
+  <!-- smile -->
+  <path d="M28 49c2.5 2.5 5.5 2.5 8 0" fill="none" stroke="#5B2B3A" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,143 @@
+/* ============================================================
+   Momo Notes 便利贴样式
+   本文件由 content.js 读取并注入到 Shadow DOM 的 <style> 中，
+   与宿主网页的 CSS 完全隔离，避免互相污染。
+   ============================================================ */
+
+.momo-layer {
+  position: static;
+}
+
+/* —— 便利贴卡片 —— */
+.momo-note {
+  position: fixed;
+  width: 224px;
+  height: 224px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: var(--note-bg, #FFE4EF);
+  border: 1px solid var(--note-border, #F9A8D4);
+  border-radius: 16px;
+  color: var(--note-text, #4A2B3A);
+  font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", sans-serif;
+  box-shadow: 0 6px 20px rgba(214, 61, 109, 0.14), 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  animation: momo-pop 0.18s ease;
+}
+
+/* 四种配色（通过 CSS 变量切换） */
+.momo-note--pink     { --note-bg: #FFE4EF; --note-border: #F9A8D4; --note-header: #FFD3E5; --note-text: #4A2B3A; }
+.momo-note--yellow   { --note-bg: #FFF6D6; --note-border: #FDE68A; --note-header: #FFF0BC; --note-text: #4A3B22; }
+.momo-note--mint     { --note-bg: #E4F6EC; --note-border: #A7E3C2; --note-header: #D2F0DF; --note-text: #1F4433; }
+.momo-note--lavender { --note-bg: #EFE8FB; --note-border: #CDB4F6; --note-header: #E2D8F7; --note-text: #3A2B55; }
+
+.momo-note.dragging {
+  box-shadow: 0 12px 32px rgba(214, 61, 109, 0.22), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* —— 标题栏（拖动把手区域） —— */
+.momo-note__header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 10px;
+  background: var(--note-header);
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.momo-note.dragging .momo-note__header { cursor: grabbing; }
+
+/* 拖动把手（小桃子圆点） */
+.momo-note__grip {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #F472B6, #EC4899);
+  flex: 0 0 auto;
+}
+
+/* 颜色选择圆点 */
+.momo-note__colors {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.momo-note__color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+.momo-note__color--pink     { background: #F9A8D4; }
+.momo-note__color--yellow   { background: #FDE68A; }
+.momo-note__color--mint     { background: #A7E3C2; }
+.momo-note__color--lavender { background: #CDB4F6; }
+.momo-note__color.active { box-shadow: 0 0 0 2px #EC4899; }
+
+/* 删除 / 取消按钮（防误触：先确认再删除） */
+.momo-note__btn {
+  border: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 8px;
+  font-family: inherit;
+}
+.momo-note__delete {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--note-text);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.momo-note__delete:hover { background: rgba(255, 255, 255, 0.9); }
+.momo-note__cancel {
+  display: none;
+  height: 24px;
+  padding: 0 8px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--note-text);
+}
+.momo-note.confirming .momo-note__cancel { display: inline-flex; align-items: center; }
+.momo-note.confirming .momo-note__delete {
+  width: auto;
+  padding: 0 8px;
+  background: #E11D48;
+  color: #fff;
+}
+.momo-note.confirming .momo-note__colors { display: none; }
+
+/* —— 正文编辑区 —— */
+.momo-note__body {
+  flex: 1 1 auto;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  color: var(--note-text);
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.momo-note__body::placeholder { color: var(--note-text); opacity: 0.45; }
+
+/* —— 动画 —— */
+@keyframes momo-pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momo-note { animation: none; transition: none; }
+}

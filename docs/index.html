@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Momo Notes｜桃桃便利贴 — 把灵感留在网页上</title>
+  <meta name="description" content="Momo Notes 是一款 Chrome 浏览器扩展，让你在任意网页上创建、拖动并保存可爱的便利贴，随手记录灵感。">
+  <meta name="theme-color" content="#FFFBF5">
+  <link rel="icon" href="assets/mascot.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Momo Notes 首页">
+        <img src="assets/mascot.svg" alt="" width="28" height="28">
+        <span class="brand__name" translate="no">Momo Notes</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="打开菜单">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="主导航">
+        <a class="nav-menu__link" href="#features">功能介绍</a>
+        <a class="nav-menu__link" href="#demo">使用演示</a>
+        <a class="nav-menu__link" href="#install">安装指南</a>
+        <span class="nav-menu__link nav-menu__link--soon" aria-disabled="true" title="GitHub 仓库地址即将公开">GitHub<span class="soon-tag">即将</span></span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Chrome 浏览器扩展 · 免费 · 本地存储</p>
+          <h1 class="hero__title">让灵感，随手<span class="hl">贴</span>在网页上。</h1>
+          <p class="hero__sub">浏览资料、阅读文章或突然想到什么？打开 Momo Notes，把想法留在此刻。</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="downloads/momo-notes.zip" download>免费下载</a>
+            <a class="btn btn--ghost" href="#demo">看看怎么用</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__page">
+            <div class="hero__page-bar"><i></i><i></i><i></i></div>
+            <span class="hero__page-line"></span>
+            <span class="hero__page-line"></span>
+            <span class="hero__page-line hero__page-line--short"></span>
+            <span class="hero__page-line"></span>
+            <span class="hero__page-line hero__page-line--mid"></span>
+          </div>
+
+          <div class="hero-note" style="--x: 6%;  --y: 8%;  --rot: -6deg;">
+            <div class="note note--pink">
+              <div class="note__header"><span class="note__grip"></span><span class="note__dots"><i></i><i></i><i></i><i></i></span></div>
+              <div class="note__body"><p>导出《设计中的设计》书摘</p><span class="note__line"></span><span class="note__line note__line--short"></span></div>
+            </div>
+          </div>
+
+          <div class="hero-note" style="--x: 34%; --y: 26%; --rot: 4deg;">
+            <div class="note note--yellow">
+              <div class="note__header"><span class="note__grip"></span><span class="note__dots"><i></i><i></i><i></i><i></i></span></div>
+              <div class="note__body"><p>配色灵感：奶黄 × 薄荷绿</p><span class="note__line note__line--mid"></span></div>
+            </div>
+          </div>
+
+          <div class="hero-note" style="--x: 18%; --y: 52%; --rot: -2deg;">
+            <div class="note note--mint">
+              <div class="note__header"><span class="note__grip"></span><span class="note__dots"><i></i><i></i><i></i><i></i></span></div>
+              <div class="note__body"><p>待办：周五前发周报 ✿</p><span class="note__line"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">核心功能</p>
+          <h2 class="section__title">把想法留在任何网页</h2>
+          <p class="section__sub">Momo Notes 是长在浏览器里的便利贴，随手记、随手存。</p>
+        </div>
+
+        <ul class="features">
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M12 9v6M9 12h6"/></svg>
+            </span>
+            <h3 class="feature__title">一键创建便利贴</h3>
+            <p class="feature__desc">点击工具栏图标，新建一张便利贴，想到就写。</p>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3.5v17M3.5 12h17"/><path d="M8.5 7 12 3.5 15.5 7M8.5 17 12 20.5 15.5 17M7 8.5 3.5 12 7 15.5M17 8.5 20.5 12 17 15.5"/></svg>
+            </span>
+            <h3 class="feature__title">自由拖动位置</h3>
+            <p class="feature__desc">按住顶部标题栏拖动，放到网页任意角落。</p>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3a9 9 0 1 0 0 18c.9 0 1.5-.7 1.5-1.6 0-.4-.2-.8-.4-1.1a1.5 1.5 0 0 1 1.2-2.3H16A5 5 0 0 0 21 11c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="7.2" r="1" fill="currentColor" stroke="none"/><circle cx="14.2" cy="7.2" r="1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <h3 class="feature__title">四种柔和配色</h3>
+            <p class="feature__desc">粉色、奶黄、薄荷绿、薰衣草紫，随心情切换。</p>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+            </span>
+            <h3 class="feature__title">自动保存笔记</h3>
+            <p class="feature__desc">输入即保存，刷新页面、重启浏览器也不丢。</p>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><rect x="8" y="3.5" width="12.5" height="12.5" rx="2.5"/><rect x="3.5" y="8" width="12.5" height="12.5" rx="2.5"/></svg>
+            </span>
+            <h3 class="feature__title">不同网页独立记录</h3>
+            <p class="feature__desc">每个网页各有一套便利贴，互不串扰。</p>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3.5 5 6v5c0 4.5 3 8 7 9.5 4-1.5 7-5 7-9.5V6z"/><path d="M9.5 11.5h5M12 11.5V9a1.8 1.8 0 0 0-3.6 0v2.5"/></svg>
+            </span>
+            <h3 class="feature__title">本地存储，保护隐私</h3>
+            <p class="feature__desc">数据只留在你的浏览器里，不上传、不联网。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 使用演示 -->
+    <section class="section section--tint" id="demo">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">使用演示</p>
+          <h2 class="section__title">现在就试试</h2>
+          <p class="section__sub">这是官网里的交互演示，不影响浏览器插件的数据。添加一张便利贴，拖动它、换色、写点字。</p>
+        </div>
+
+        <div class="demo reveal">
+          <div class="demo__bar">
+            <button class="btn btn--primary demo__add" type="button" id="demo-add">＋ 添加便利贴</button>
+            <p class="demo__hint" id="demo-hint">按住标题栏拖动 · 点击圆点换色 · 方向键可移动</p>
+          </div>
+
+          <div class="demo__window">
+            <div class="demo__chrome" aria-hidden="true">
+              <span class="demo__dots"><i></i><i></i><i></i></span>
+              <span class="demo__address"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M7 10V8a5 5 0 0 1 10 0v2"/><rect x="5" y="10" width="14" height="10" rx="2.5"/></svg> example.com/reading-notes</span>
+            </div>
+            <div class="demo__page" id="demo-page" aria-label="便利贴演示画布">
+              <h3 class="demo__page-title">读书笔记</h3>
+              <span class="demo__page-line"></span>
+              <span class="demo__page-line"></span>
+              <span class="demo__page-line demo__page-line--mid"></span>
+              <span class="demo__page-line demo__page-line--short"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 安装指南 -->
+    <section class="section" id="install">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">安装指南</p>
+          <h2 class="section__title">用开发者模式安装</h2>
+          <p class="section__sub">Momo Notes 目前通过 Chrome 的「加载已解压的扩展程序」安装，步骤如下。</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">1</span>
+            <div class="step__body">
+              <h3 class="step__title">下载 ZIP 压缩包</h3>
+              <p class="step__desc">点击下方「下载 Momo Notes」按钮，获取 momo-notes.zip 压缩包。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">2</span>
+            <div class="step__body">
+              <h3 class="step__title">解压到本地文件夹</h3>
+              <p class="step__desc">把 ZIP 解压到一个固定目录，例如 <code>D:\momo-notes</code>。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">3</span>
+            <div class="step__body">
+              <h3 class="step__title">打开 chrome://extensions</h3>
+              <p class="step__desc">在 Chrome 地址栏输入 <code translate="no">chrome://extensions</code> 并回车。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">4</span>
+            <div class="step__body">
+              <h3 class="step__title">开启开发者模式</h3>
+              <p class="step__desc">打开页面右上角的「开发者模式」开关。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">5</span>
+            <div class="step__body">
+              <h3 class="step__title">加载已解压的扩展程序</h3>
+              <p class="step__desc">点击「加载已解压的扩展程序」，选择刚才解压的文件夹，即可开始使用。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section class="section section--tint" id="download">
+      <div class="container">
+        <div class="download reveal">
+          <img class="download__mascot" src="assets/mascot.svg" alt="" width="64" height="64">
+          <p class="eyebrow">下载</p>
+          <h2 class="download__title">把 Momo Notes 带回家</h2>
+          <p class="download__desc">下载 Momo Notes 的 ZIP 压缩包，解压后按上方步骤加载即可使用。</p>
+          <a class="btn btn--primary download__btn" href="downloads/momo-notes.zip" download>下载 Momo Notes</a>
+          <p class="download__note">压缩包内仅含插件运行所需文件，解压后顶层即可看到 <code translate="no">manifest.json</code>。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="assets/mascot.svg" alt="" width="28" height="28">
+          <span class="brand__name" translate="no">Momo Notes</span>
+        </div>
+        <p class="footer__intro">一个长在浏览器里的可爱便利贴，随手记录每个灵感。</p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">项目</h3>
+        <span class="footer__link footer__link--soon" aria-disabled="true" title="GitHub 仓库地址即将公开">GitHub 仓库<span class="soon-tag">即将</span></span>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">版本</h3>
+        <p class="footer__meta">v0.1.0</p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">版权</h3>
+        <p class="footer__meta">© <span id="year">2026</span> Momo Notes</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

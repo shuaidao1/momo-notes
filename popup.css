@@ -1,0 +1,99 @@
+/* Momo Notes 弹窗样式 */
+
+:root {
+  --berry: #EC4899;
+  --berry-dark: #BE185D;
+  --soft-pink: #F9C9D6;
+  --cream: #FFFBF5;
+  --text: #831843;
+  --text-muted: #A3557B;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 300px;
+  margin: 0;
+  padding: 16px;
+  font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: linear-gradient(180deg, #FFFBF5 0%, #FDF2F8 100%);
+  color: var(--text);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.mascot { width: 40px; height: 40px; flex: 0 0 auto; }
+.app-title h1 { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.2; }
+.app-title p { margin: 2px 0 0; font-size: 12px; color: var(--text-muted); }
+
+.stats {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #FCE7F3;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+.stats__label { font-size: 13px; color: var(--text-muted); }
+.stats__count { font-size: 24px; font-weight: 700; color: var(--berry); }
+
+.actions { display: flex; flex-direction: column; gap: 10px; }
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 14px;
+  font-family: inherit;
+  min-height: 44px;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn--primary {
+  background: var(--berry);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+.btn--primary:hover { background: var(--berry-dark); }
+.btn--ghost {
+  background: #fff;
+  color: var(--berry);
+  border: 1px solid var(--soft-pink);
+}
+.btn--ghost:hover { background: #FDF2F8; }
+
+/* 不支持页面提示（默认隐藏） */
+.notice {
+  display: none;
+  background: #FFF6D6;
+  border: 1px solid #FDE68A;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-top: 12px;
+}
+.notice p { margin: 0 0 4px; font-size: 14px; font-weight: 600; color: #4A3B22; }
+.notice span { font-size: 12px; color: #8A6D3B; line-height: 1.5; display: block; }
+
+.app-footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* 不支持页面时隐藏统计与操作，只显示提示 */
+body.unsupported .stats,
+body.unsupported .actions { display: none; }
+body.unsupported .notice { display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}

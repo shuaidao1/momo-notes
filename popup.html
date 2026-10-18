@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Momo Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="app-header">
+    <img class="mascot" src="assets/mascot.svg" alt="桃桃吉祥物" width="40" height="40">
+    <div class="app-title">
+      <h1>Momo Notes</h1>
+      <p>桃桃便利贴</p>
+    </div>
+  </header>
+
+  <section class="stats">
+    <span class="stats__label">本页便利贴</span>
+    <span class="stats__count" id="count">0</span>
+  </section>
+
+  <div class="actions">
+    <button id="btn-new" class="btn btn--primary">＋ 新建便利贴</button>
+    <button id="btn-toggle" class="btn btn--ghost" aria-pressed="false">
+      <span id="toggle-label">隐藏便利贴</span>
+    </button>
+  </div>
+
+  <div class="notice" id="unsupported">
+    <p>此页面不支持便利贴</p>
+    <span>chrome://、浏览器商店等特殊页面无法使用，请切换到普通网页后再试。</span>
+  </div>
+
+  <footer class="app-footer">数据仅保存在本地浏览器 · 不联网</footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
